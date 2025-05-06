@@ -1,0 +1,29 @@
+package accommodation.domain.factory;
+
+import accommodation.domain.model.Accommodation;
+import accommodation.domain.model.RoomType;
+
+import java.math.BigDecimal;
+
+/** 抽象基类封装公共逻辑 */
+abstract class AbstractAccommodationBuilder implements AccommodationBuilder {
+    protected int number;
+    protected RoomType type;
+    protected BigDecimal price;
+
+    @Override public AccommodationBuilder number(int number) {
+        this.number = number; return this;
+    }
+
+    @Override public AccommodationBuilder type(RoomType type) {
+        this.type = type; return this;
+    }
+
+    @Override public AccommodationBuilder price(BigDecimal price) {
+        this.price = price; return this;
+    }
+
+    @Override public Accommodation build() {
+        return new Accommodation(number, type, price);
+    }
+}
