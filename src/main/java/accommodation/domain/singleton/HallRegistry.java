@@ -7,8 +7,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Singleton：全局宿舍房间注册表<br/>
- * 保证唯一实例 & 线程安全
+ * Singleton: Global hall room registry<br/>
+ * Ensures single instance & thread safety
  */
 public final class HallRegistry {
     private static final HallRegistry INSTANCE = new HallRegistry();

@@ -8,27 +8,12 @@ import accommodation.domain.singleton.HallRegistry;
 import java.util.Collection;
 
 /**
- * 用例级服务：协调 Factory + Repository
+ * Use case level service: Coordinates Factory + Repository
  */
-public final class AccommodationService {
-    private final AccommodationFactory factory;
-    private final AccommodationRepository repository;
+public interface AccommodationService {
 
-    public AccommodationService(AccommodationFactory factory,
-                                AccommodationRepository repository) {
-        this.factory = factory;
-        this.repository = repository;
-    }
+    Accommodation createAccommodation(int roomNumber);
 
-    /** 创建房间并注册到仓库与单例 Registry */
-    public Accommodation createAccommodation(int roomNumber) {
-        Accommodation acc = factory.create(roomNumber);
-        repository.save(acc);
-        HallRegistry.instance().register(acc);
-        return acc;
-    }
+    Collection<Accommodation> listAll();
 
-    public Collection<Accommodation> listAll() {
-        return repository.findAll();
-    }
 }

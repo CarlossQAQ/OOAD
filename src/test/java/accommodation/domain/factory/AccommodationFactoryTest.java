@@ -9,45 +9,45 @@ import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("🏭  Factory + Builder 组合测试")
+@DisplayName("��  Factory + Builder Combination Test")
 class AccommodationFactoryTest {
 
     @BeforeEach
     void before() {
-        System.out.println("\n========= 开始执行 AccommodationFactoryTest =========");
+        System.out.println("\n========= Starting AccommodationFactoryTest =========");
     }
 
     @AfterEach
     void after() {
-        System.out.println("========= 结束 =========\n");
+        System.out.println("========= End =========\n");
     }
 
     @Test
-    @DisplayName("StandardAccommodationFactory 应生成标准间")
+    @DisplayName("StandardAccommodationFactory should create standard room")
     void standardFactoryCreatesStandardRoom() {
         AccommodationFactory factory = new StandardAccommodationFactory();
         Accommodation room = factory.create(101);
 
-        System.out.println("生成房间: " + room);
+        System.out.println("Room created: " + room);
 
-        assertAll("标准间属性校验",
-                () -> assertEquals(101, room.getNumber(), "房号应为 101"),
-                () -> assertEquals(RoomType.STANDARD, room.getType(), "房型应为 STANDARD"),
-                () -> assertEquals(BigDecimal.valueOf(700), room.getPricePerMonth(), "价格应为 700")
+        assertAll("Standard room property validation",
+                () -> assertEquals(101, room.getNumber(), "Room number should be 101"),
+                () -> assertEquals(RoomType.STANDARD, room.getType(), "Room type should be STANDARD"),
+                () -> assertEquals(BigDecimal.valueOf(700), room.getPricePerMonth(), "Price should be 700")
         );
     }
 
     @Test
-    @DisplayName("SuperiorAccommodationFactory 应生成高级间")
+    @DisplayName("SuperiorAccommodationFactory should create superior room")
     void superiorFactoryCreatesSuperiorRoom() {
         AccommodationFactory factory = new SuperiorAccommodationFactory();
         Accommodation room = factory.create(202);
 
-        System.out.println("生成房间: " + room);
+        System.out.println("Room created: " + room);
 
-        assertAll("高级间属性校验",
-                () -> assertEquals(RoomType.SUPERIOR, room.getType(), "房型应为 SUPERIOR"),
-                () -> assertEquals(BigDecimal.valueOf(950), room.getPricePerMonth(), "价格应为 950")
+        assertAll("Superior room property validation",
+                () -> assertEquals(RoomType.SUPERIOR, room.getType(), "Room type should be SUPERIOR"),
+                () -> assertEquals(BigDecimal.valueOf(950), room.getPricePerMonth(), "Price should be 950")
         );
     }
 }

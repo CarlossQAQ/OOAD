@@ -1,6 +1,7 @@
 package accommodation.application;
 
 
+import accommodation.application.impl.AccommodationServiceImpl;
 import org.junit.jupiter.api.*;
 
 import accommodation.domain.factory.StandardAccommodationFactory;
@@ -12,7 +13,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("🛎️  Application Service 测试")
+@DisplayName("🛎️  Application Service Test")
 class AccommodationServiceTest {
 
     private AccommodationService service;
@@ -21,26 +22,26 @@ class AccommodationServiceTest {
     @BeforeEach
     void setUp() {
         repo = new InMemoryAccommodationRepository();
-        service = new AccommodationService(new StandardAccommodationFactory(), repo);
-        System.out.println("\n========= AccommodationServiceTest 准备完毕 =========");
+        service = new AccommodationServiceImpl(new StandardAccommodationFactory(), repo);
+        System.out.println("\n========= AccommodationServiceTest ready =========");
     }
 
     @AfterEach
     void after() {
-        System.out.println("========= 结束 =========\n");
+        System.out.println("========= End =========\n");
     }
 
     @Test
-    @DisplayName("createAccommodation() 应持久化并注册房间")
+    @DisplayName("createAccommodation() should persist and register room")
     void createAccommodationPersistsAndRegisters() {
         Accommodation created = service.createAccommodation(401);
 
-        System.out.println("创建并注册房间: " + created);
-        System.out.println("Repository 当前列表: " + service.listAll());
+        System.out.println("Created and registered room: " + created);
+        System.out.println("Repository current list: " + service.listAll());
 
-        assertAll("房间持久化 + 查询验证",
-                () -> assertTrue(repo.findByNumber(401).isPresent(), "Repository 应含房号 401"),
-                () -> assertEquals(List.of(created), service.listAll().stream().toList(), "listAll() 应返回该房间")
+        assertAll("Room persistence + query validation",
+                () -> assertTrue(repo.findByNumber(401).isPresent(), "Repository should contain room 401"),
+                () -> assertEquals(List.of(created), service.listAll().stream().toList(), "listAll() should return the room")
         );
     }
 }

@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
-/** 内存实现，方便测试 */
+/** In-memory implementation, convenient for testing */
 public final class InMemoryAccommodationRepository implements AccommodationRepository {
     private final ConcurrentHashMap<Integer, Accommodation> store = new ConcurrentHashMap<>();
 

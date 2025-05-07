@@ -5,7 +5,7 @@ import accommodation.domain.model.RoomType;
 
 import java.math.BigDecimal;
 
-/** 标准间 Builder */
+/** Standard Room Builder */
 public final class StandardRoomBuilder extends AbstractAccommodationBuilder {
     public StandardRoomBuilder() {
         this.type = RoomType.STANDARD;

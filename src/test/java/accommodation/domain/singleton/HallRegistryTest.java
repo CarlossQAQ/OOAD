@@ -8,41 +8,41 @@ import accommodation.domain.model.Accommodation;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("🔒  Singleton HallRegistry 测试")
+@DisplayName("🔒  Singleton HallRegistry Test")
 class HallRegistryTest {
 
     @BeforeEach
     void clearRegistry() {
-        HallRegistry.reset();   // 仅测试可见
-        System.out.println("\n========= Registry 已重置 =========");
+        HallRegistry.reset();   // Only visible for testing
+        System.out.println("\n========= Registry reset =========");
     }
 
     @AfterEach
     void after() {
-        System.out.println("========= 结束 =========\n");
+        System.out.println("========= End =========\n");
     }
 
     @Test
-    @DisplayName("instance() 应返回同一对象")
+    @DisplayName("instance() should return the same object")
     void singletonReturnsSameInstance() {
         HallRegistry r1 = HallRegistry.instance();
         HallRegistry r2 = HallRegistry.instance();
 
-        System.out.printf("实例 1 hash=%d, 实例 2 hash=%d%n",
+        System.out.printf("Instance 1 hash=%d, Instance 2 hash=%d%n",
                 System.identityHashCode(r1), System.identityHashCode(r2));
 
-        assertSame(r1, r2, "多次调用应得到同一实例");
+        assertSame(r1, r2, "Multiple calls should return the same instance");
     }
 
     @Test
-    @DisplayName("register() 后应能 find() 成功")
+    @DisplayName("After register() should be able to find() successfully")
     void registerAndRetrieveRoom() {
         Accommodation room = new StandardAccommodationFactory().create(301);
         HallRegistry.instance().register(room);
 
-        System.out.println("已注册房间: " + room);
-        System.out.println("当前 Registry 内容: " + HallRegistry.instance().all());
+        System.out.println("Registered room: " + room);
+        System.out.println("Current Registry content: " + HallRegistry.instance().all());
 
-        assertEquals(room, HallRegistry.instance().find(301), "应能检索到刚注册的房间");
+        assertEquals(room, HallRegistry.instance().find(301), "Should be able to find the registered room");
     }
 }

@@ -1,53 +1,52 @@
+## Main Features
 
-## 主要功能
+- Support for creating and managing two types of rooms: Standard and Superior
+- Support for room registration, query, and persistence
+- Provides in-memory repository implementation, convenient for testing and demonstration
 
-- 支持标准间和高级间两种房型的创建与管理
-- 支持房间的注册、查询、持久化
-- 提供内存仓储实现，便于测试和演示
+## Design Patterns Used
 
-## 采用的设计模式
+This project mainly uses the following three design patterns:
 
-本项目主要用到以下三种设计模式：
+1. **Factory Method Pattern**
+   - Through `AccommodationFactory` and its implementations, flexibly create different types of room objects.
 
-1. **工厂方法模式（Factory Method Pattern）**
-   - 通过 `AccommodationFactory` 及其实现类，灵活创建不同类型的房间对象。
+2. **Builder Pattern**
+   - Through `AccommodationBuilder` and its implementations, construct room objects step by step, supporting fluent API.
 
-2. **建造者模式（Builder Pattern）**
-   - 通过 `AccommodationBuilder` 及其实现类，分步骤构建房间对象，支持流式API。
+3. **Singleton Pattern**
+   - Through `HallRegistry` implement a globally unique room registry, ensuring data consistency.
 
-3. **单例模式（Singleton Pattern）**
-   - 通过 `HallRegistry` 实现全局唯一的房间注册表，保证数据一致性。
+## Key Classes Description
 
-## 关键类说明
+- `Accommodation`: Domain model, representing a dormitory room.
+- `RoomType`: Room type enumeration (Standard/Superior).
+- `AccommodationFactory`, `StandardAccommodationFactory`, `SuperiorAccommodationFactory`: Factory Method pattern related.
+- `AccommodationBuilder`, `StandardRoomBuilder`, `SuperiorRoomBuilder`: Builder pattern related.
+- `AccommodationRepository`, `InMemoryAccommodationRepository`: Repository interface and in-memory implementation.
+- `HallRegistry`: Singleton pattern implementation of global registry.
+- `AccommodationService`: Application service, coordinates factory, repository and registry.
 
-- `Accommodation`：领域模型，表示宿舍房间。
-- `RoomType`：房间类型枚举（标准间/高级间）。
-- `AccommodationFactory`、`StandardAccommodationFactory`、`SuperiorAccommodationFactory`：工厂方法模式相关。
-- `AccommodationBuilder`、`StandardRoomBuilder`、`SuperiorRoomBuilder`：建造者模式相关。
-- `AccommodationRepository`、`InMemoryAccommodationRepository`：仓储接口及内存实现。
-- `HallRegistry`：单例模式实现的全局注册表。
-- `AccommodationService`：应用服务，协调工厂、仓储和注册表。
+## How to Run
 
-## 如何运行
-
-1. **编译项目**
+1. **Compile the project**
    ```bash
    mvn clean compile
    ```
 
-2. **运行测试**
+2. **Run tests**
    ```bash
    mvn test
    ```
 
-3. **主要测试类**
+3. **Main test classes**
    - `AccommodationServiceTest`
    - `AccommodationFactoryTest`
    - `HallRegistryTest`
 
-## UML 类图
+## UML Class Diagram
 
-项目采用分层架构，核心类图如下^w^：
+The project adopts a layered architecture, core class diagram is as follows:
 
-> ![UML类图](./doc/class-diagram.png)  
+> ![UML Class Diagram](./doc/class-diagram.png)  
 

@@ -2,7 +2,7 @@ package accommodation.domain.factory;
 
 import accommodation.domain.model.Accommodation;
 
-/** Factory Method 顶层接口 */
+/** Factory Method top-level interface */
 @FunctionalInterface
 public interface AccommodationFactory {
     Accommodation create(int roomNumber);

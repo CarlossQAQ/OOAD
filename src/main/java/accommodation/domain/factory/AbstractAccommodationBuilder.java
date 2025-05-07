@@ -5,7 +5,7 @@ import accommodation.domain.model.RoomType;
 
 import java.math.BigDecimal;
 
-/** 抽象基类封装公共逻辑 */
+/** Abstract base class encapsulating common logic */
 abstract class AbstractAccommodationBuilder implements AccommodationBuilder {
     protected int number;
     protected RoomType type;

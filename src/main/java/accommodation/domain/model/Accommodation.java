@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * 领域对象：宿舍房间（不可变）
+ * Domain Object: Student Accommodation (Immutable)
  */
 public final class Accommodation {
     private final int number;

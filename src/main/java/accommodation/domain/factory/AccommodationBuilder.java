@@ -5,7 +5,7 @@ import accommodation.domain.model.RoomType;
 
 import java.math.BigDecimal;
 
-/** Builder 抽象：流式 API */
+/** Builder abstract: Fluent API */
 public interface AccommodationBuilder {
 
     AccommodationBuilder number(int number);
