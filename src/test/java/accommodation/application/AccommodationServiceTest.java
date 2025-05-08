@@ -20,7 +20,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("🛎️  Application Service Test")
+@DisplayName(" Application Service Test")
 class AccommodationServiceTest {
 
     private AccommodationService standardService;

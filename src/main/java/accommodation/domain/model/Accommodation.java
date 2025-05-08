@@ -3,9 +3,7 @@ package accommodation.domain.model;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/**
- * Domain Object: Student Accommodation (Immutable)
- */
+
 public final class Accommodation {
     private final int number;
     private final RoomType type;

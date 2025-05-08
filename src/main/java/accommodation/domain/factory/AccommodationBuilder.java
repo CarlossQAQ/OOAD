@@ -1,11 +1,11 @@
 package accommodation.domain.factory;
 
+import java.math.BigDecimal;
+
 import accommodation.domain.model.Accommodation;
 import accommodation.domain.model.RoomType;
 
-import java.math.BigDecimal;
 
-/** Builder abstract: Fluent API */
 public interface AccommodationBuilder {
 
     AccommodationBuilder number(int number);

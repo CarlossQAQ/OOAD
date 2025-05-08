@@ -13,7 +13,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("🔒  Singleton HallRegistry Test")
+@DisplayName("Singleton HallRegistry Test")
 class HallRegistryTest {
 
     @BeforeEach
@@ -28,7 +28,7 @@ class HallRegistryTest {
     }
 
     @Test
-    @DisplayName("instance() should return the same object")
+    @DisplayName("instance() -> same object")
     void singletonReturnsSameInstance() {
         HallRegistry r1 = HallRegistry.instance();
         HallRegistry r2 = HallRegistry.instance();
@@ -40,7 +40,7 @@ class HallRegistryTest {
     }
 
     @Test
-    @DisplayName("After register() should be able to find() successfully")
+    @DisplayName("register() -> find() successfully")
     void registerAndRetrieveRoom() {
         Accommodation room = new StandardAccommodationFactory().create(301);
         HallRegistry.instance().register(room);

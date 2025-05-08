@@ -1,15 +1,11 @@
 package accommodation.domain.singleton;
 
-import accommodation.domain.model.Accommodation;
-
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Singleton: Global hall room registry<br/>
- * Ensures single instance & thread safety
- */
+import accommodation.domain.model.Accommodation;
+
 public final class HallRegistry {
     private static final HallRegistry INSTANCE = new HallRegistry();
 

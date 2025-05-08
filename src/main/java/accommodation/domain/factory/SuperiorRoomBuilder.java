@@ -1,10 +1,10 @@
 package accommodation.domain.factory;
 
-import accommodation.domain.model.RoomType;
-
 import java.math.BigDecimal;
 
-/** Superior Room Builder */
+import accommodation.domain.model.RoomType;
+
+
 public final class SuperiorRoomBuilder extends AbstractAccommodationBuilder {
     public SuperiorRoomBuilder() {
         this.type = RoomType.SUPERIOR;

@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("��  Factory + Builder Combination Test")
+@DisplayName(" Factory + Builder Combination Test")
 class AccommodationFactoryTest {
 
     @BeforeEach

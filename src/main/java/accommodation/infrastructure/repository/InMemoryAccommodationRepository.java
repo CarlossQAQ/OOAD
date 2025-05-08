@@ -1,13 +1,13 @@
 package accommodation.infrastructure.repository;
 
-import accommodation.domain.model.Accommodation;
-import accommodation.domain.repository.AccommodationRepository;
-
 import java.util.Collection;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
-/** In-memory implementation, convenient for testing */
+import accommodation.domain.model.Accommodation;
+import accommodation.domain.repository.AccommodationRepository;
+
+
 public final class InMemoryAccommodationRepository implements AccommodationRepository {
     private final ConcurrentHashMap<Integer, Accommodation> store = new ConcurrentHashMap<>();
 
