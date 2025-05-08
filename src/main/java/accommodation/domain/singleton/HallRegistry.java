@@ -32,6 +32,15 @@ public final class HallRegistry {
     public Map<Integer, Accommodation> all() {
         return Collections.unmodifiableMap(rooms);
     }
+    
+    /**
+     * Reset registry for testing purposes.
+     * This method should only be used in test code.
+     */
+    public static void resetForTest() {
+        INSTANCE.rooms.clear();
+    }
+    
     static void reset() {
         INSTANCE.rooms.clear();
     }
