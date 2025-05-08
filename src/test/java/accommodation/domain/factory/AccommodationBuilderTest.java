@@ -1,12 +1,16 @@
 package accommodation.domain.factory;
 
-import accommodation.domain.model.Accommodation;
-import accommodation.domain.model.RoomType;
-import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import accommodation.domain.builder.StandardRoomBuilder;
+import accommodation.domain.builder.SuperiorRoomBuilder;
+import accommodation.domain.model.Accommodation;
+import accommodation.domain.model.RoomType;
 
 @DisplayName("🔨 Accommodation Builder Pattern Test")
 class AccommodationBuilderTest {

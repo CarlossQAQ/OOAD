@@ -1,5 +1,6 @@
 package accommodation.domain.factory;
 
+import accommodation.domain.builder.StandardRoomBuilder;
 import accommodation.domain.model.Accommodation;
 
 

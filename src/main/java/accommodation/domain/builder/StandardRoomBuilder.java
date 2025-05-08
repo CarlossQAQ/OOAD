@@ -1,4 +1,4 @@
-package accommodation.domain.factory;
+package accommodation.domain.builder;
 
 import java.math.BigDecimal;
 
